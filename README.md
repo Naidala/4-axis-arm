@@ -2,12 +2,7 @@
 
 The serial manipulator is parameterized following the Denavit-Hartenberg convention.
 
-The Jacobian matrix \( J \in \mathbb{R}^{m \times n} \) represents the relationship between the joint velocities and the end-effector twist vector \( \underline{\xi} \). For position control, we use the position-only Jacobian \( J_p \in \mathbb{R}^{3 \times 4} \), calculated based on joint rotations and the distances between frames. Given the manipulator’s redundancy (4 joints for a 3D position task), we impose an additional constraint to ensure that the end-effector maintains a perpendicular orientation to the ground during operation.
-
-A CLIK (Closed-Loop Inverse Kinematics) method brings the end-effector to the desired start position with the control law:
-   \[
-   \underline{\dot{q}} = J_p^{-1}(\underline{\dot{p}}_d + K \underline{e})
-   \]
+The Jacobian matrix represents the relationship between the joint velocities and the end-effector twist vector. A CLIK (Closed-Loop Inverse Kinematics) method brings the end-effector to the desired start position.
 
 
 ### MATLAB Directory
@@ -15,7 +10,6 @@ A CLIK (Closed-Loop Inverse Kinematics) method brings the end-effector to the de
 The `MATLAB` directory contains the following elements:
 
 - **Scripts and Functions**: MATLAB scripts for implementing kinematic calculations and control algorithms, primarily for simulating CLIK. 
-
 - **Simulink Models**: The directory includes a Simulink model (`simulink_clik.slx`) that represents the kinematic chain and control loop of the robotic arm. 
 
 ### ROS Directory
